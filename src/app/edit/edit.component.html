@@ -1,0 +1,95 @@
+<form [formGroup] = "editUserForm" (submit) = "updateUser()">
+  <mat-card-content><mat-card-title>Create new user</mat-card-title></mat-card-content>
+    <mat-card-content>
+      <div>
+            <mat-form-field appearance="fill">
+              <mat-label>Id</mat-label>
+              <input required matInput placeholder="Id" formControlName="id">
+              <mat-icon *ngIf="editUserForm.controls.id.valid" matSuffix>sentiment_very_satisfied</mat-icon>
+                <mat-icon *ngIf="editUserForm.controls.id.errors" matSuffix>cancel</mat-icon>
+            </mat-form-field>
+            <div *ngIf="editUserForm.controls.id.errors" class="text-danger">
+              <p *ngIf="editUserForm.controls.id.errors.required" class="text-danger">
+                  Id is required
+              </p>
+              <p *ngIf="editUserForm.controls.id.errors.pattern" class="text-danger">
+                  Id can only be a number
+              </p>
+            </div>
+          </div>
+        <div>
+            <mat-form-field appearance="fill">
+              <mat-label>User Name</mat-label>
+              <input required matInput placeholder="User Name" formControlName="nume">
+              <mat-icon *ngIf="editUserForm.controls.nume.valid" matSuffix>sentiment_very_satisfied</mat-icon>
+              <mat-icon *ngIf="editUserForm.controls.nume.errors" matSuffix>cancel</mat-icon>
+            </mat-form-field>
+            <div *ngIf="editUserForm.controls.nume.errors" class="text-danger">
+              <p *ngIf="editUserForm.controls.nume.errors.required" class="text-danger">
+                  First name is required
+              </p>
+
+              <p *ngIf="editUserForm.controls.nume.errors.minlength" class="text-danger">
+                  Name is to short
+              </p>
+              <p *ngIf="editUserForm.controls.nume.errors.maxlength" class="text-danger">
+                  Name is to long
+              </p>
+              <p *ngIf="editUserForm.controls.nume.errors.pattern" class="text-danger">
+                  Username can only contain letters
+              </p>
+            </div>
+          </div>
+
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Email Adress</mat-label>
+            <input required matInput placeholder="Email Adress" formControlName="email">
+            <mat-icon *ngIf="editUserForm.controls.email.valid" matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-icon *ngIf="editUserForm.controls.email.errors" matSuffix>cancel</mat-icon>
+          </mat-form-field>
+
+          <div *ngIf="editUserForm.controls.email.errors" class="text-danger">
+            <p *ngIf="editUserForm.controls.email.errors.required" class="text-danger">
+                Email is required
+            </p>
+            <p *ngIf="editUserForm.controls.email.errors.email" class="text-danger">
+                This is not an email
+            </p>
+            <p *ngIf="editUserForm.controls.email.errors.pattern" class="text-danger">
+                Email can only contain letters
+            </p>
+          </div>
+        </div>
+     
+      <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Phone Number</mat-label>
+            <input matInput placeholder="Phone Number" formControlName="telefon">
+            <mat-icon *ngIf="editUserForm.controls.telefon.valid" matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-icon *ngIf="editUserForm.controls.telefon.errors" matSuffix>cancel</mat-icon>
+          </mat-form-field>
+
+          <div *ngIf="editUserForm.controls.telefon.errors" class="text-danger">
+            <p *ngIf="editUserForm.controls.telefon.errors.required" class="text-danger">
+                Phone number is required
+            </p>
+            <p *ngIf="editUserForm.controls.telefon.errors.minlength" class="text-danger">
+                Phone number is to short
+            </p>
+            <p *ngIf="editUserForm.controls.telefon.errors.maxlength" class="text-danger">
+                Phone number is to long
+            </p>
+            <p *ngIf="editUserForm.controls.telefon.errors.pattern" class="text-danger">
+                Phone number can only contain letters
+            </p>
+          </div>
+    
+        </div>
+
+      <div>
+        <button mat-raised-button color="accent" [disabled]='!addUserForm.valid'>Submit</button>
+      </div>
+    </mat-card-content>
+  </form>
+  

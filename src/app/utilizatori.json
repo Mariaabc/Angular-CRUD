@@ -1,0 +1,14 @@
+[
+    { "id":1, "nume":"aaa", "email":"aaa@a.com", "telefon":"1111" },
+
+    { "id":2, "nume":"bbb", "email":"bbb@b.com", "telefon":"2222" },
+
+    { "id":3, "nume":"ccc", "email":"ccc@c.com", "telefon":"3333" },
+
+    { "id":4, "nume":"ddd", "email":"ddd@d.com", "telefon":"4444" },
+    
+    { "id":5, "nume":"eee", "email":"eee@e.com", "telefon":"5555" },
+
+    { "id":6, "nume":"fff", "email":"fff@f.com", "telefon":"6666" }
+
+]

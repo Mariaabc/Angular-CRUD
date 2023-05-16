@@ -1,0 +1,19 @@
+
+<div class = "elemente">
+    <div *ngFor="let util of utilz" >
+
+        <mat-card>
+            <mat-card-title class = "titlu">{{util.nume}}</mat-card-title>
+            <mat-card-content>
+                {{util.email}}
+                <span><a class="action-link" [routerLink]="['../view', util.id]"> View </a> </span> |
+                <span><a class="action-link" [routerLink]="['../edit', util.id]"> Edit </a> </span> |
+                <span><a class="action-link" [routerLink]="['../delete', util.id]"> Delete </a> </span> |
+            </mat-card-content>
+          </mat-card>
+        
+        
+        <br>
+    </div>
+
+</div>
